@@ -24,8 +24,8 @@ public class TankModule{
     
     
   }
-  public void Move(double speed1, double speed2){
-    
+  public double Move(double speed1, double speed2){
+    return speed1;
   }
 
 }
