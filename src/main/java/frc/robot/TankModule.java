@@ -8,10 +8,12 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 public class TankModule{
   public static CANSparkMax m1;
   public static CANSparkMax m2;
+  public static CANSparkMax m3;
+  public static CANSparkMax m4;
   private RelativeEncoder encoder;
   
 
-  public TankModule(int device1, int device2, boolean inverted, String side){
+  public TankModule(int device1, int device2, boolean inverted){
     m1 = new CANSparkMax(device1, MotorType.kBrushless);
     m2 = new CANSparkMax(device2, MotorType.kBrushless);
     m1.restoreFactoryDefaults();
@@ -22,6 +24,10 @@ public class TankModule{
     
     
   }
+  public void Move(double speed1, double speed2){
+    
+  }
+
 }
 
 
