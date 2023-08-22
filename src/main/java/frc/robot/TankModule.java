@@ -24,8 +24,12 @@ public class TankModule{
     
     
   }
-  public double Move(double speed1, double speed2){
-    return speed1;
+  //public double Move(double speed1, double speed2){
+  //  return speed1;
+  //}
+  public void setMD(double speedD) {
+  }
+  public void setMI(double speedI) {
   }
 
 }

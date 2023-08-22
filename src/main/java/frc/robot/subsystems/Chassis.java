@@ -50,8 +50,8 @@ public class Chassis extends SubsystemBase {
       speedI = 0; 
       speedD = 0;
   }
-  motorD.set(speedD);
-  motorI.set(speedI);
+  motorD.setMD(speedD);
+  motorI.setMI(speedI);
   } 
    /**
    * An example method querying a boolean state of the subsystem (for example, a digital sensor).
