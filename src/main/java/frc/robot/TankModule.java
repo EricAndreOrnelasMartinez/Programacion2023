@@ -22,7 +22,6 @@ public class TankModule{
     m1.setInverted(inverted);
     encoder = m1.getEncoder();
     
-    
   }
   //public double Move(double speed1, double speed2){
   //  return speed1;
