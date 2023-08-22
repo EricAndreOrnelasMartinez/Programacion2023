@@ -4,12 +4,30 @@
 
 package frc.robot.subsystems;
 
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.RelativeEncoder;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.TankModule;
 
-public class ExampleSubsystem extends SubsystemBase {
+public class Chassis extends SubsystemBase {
+  private  TankModule motorD;
+  private TankModule motorI;
+ 
+  private RelativeEncoder encoder;
+
   /** Creates a new ExampleSubsystem. */
-  public ExampleSubsystem() {}
+  public Chassis() {
+  motorD = new TankModule(0, 0, false); 
+  motorI = new TankModule(0, 0, false); 
+
+ 
+ // m2 = new CANSparkMax(0, null);
+
+
+
+  }
 
   /**
    * Example command factory method.
@@ -24,8 +42,18 @@ public class ExampleSubsystem extends SubsystemBase {
           /* one-time action goes here */
         });
   }
-
-  /**
+  public void move(double x, double y){
+  //  double speed1 = TankModule.speed1;
+    double speedI= y+(x*0.8); 
+    double speedD= y-(x*0.8); 
+    if ((x > -0.2 && x < 0.2)&&(y > -0.2 && y < 0.2)){
+      speedI = 0; 
+      speedD = 0;
+  }
+  motorD.set(speedD);
+  motorI.set(speedI);
+  } 
+   /**
    * An example method querying a boolean state of the subsystem (for example, a digital sensor).
    *
    * @return value of some boolean subsystem state, such as a digital sensor.
