@@ -19,8 +19,8 @@ public class Chassis extends SubsystemBase {
 
   /** Creates a new ExampleSubsystem. */
   public Chassis() {
-  motorD = new TankModule(0, 0, false); 
-  motorI = new TankModule(0, 0, false); 
+  motorD = new TankModule(6, 7, false); 
+  motorI = new TankModule(10, 5, true); 
 
  
  // m2 = new CANSparkMax(0, null);
