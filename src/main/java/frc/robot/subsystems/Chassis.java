@@ -46,7 +46,7 @@ public class Chassis extends SubsystemBase {
   //  double speed1 = TankModule.speed1;
     double speedI= y+(x*0.8); 
     double speedD= y-(x*0.8); 
-    if ((x > -0.2 && x < 0.2)&&(y > -0.2 && y < 0.2)){
+    if ((x >= -0.1 && x <= 0.1)&&(y >= -0.1 && y <= 0.1)){
       speedI = 0; 
       speedD = 0;
   }

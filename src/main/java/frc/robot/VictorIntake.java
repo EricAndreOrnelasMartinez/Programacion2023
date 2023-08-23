@@ -16,8 +16,8 @@ public class VictorIntake{
   public VictorIntake(int device1, int device2){
     mVI1 = new VictorSPX(device1);
     mVI2 = new VictorSPX(device2);
-    //mVI2.follow(mVI1);
-    mVI1.setInverted(true);
+    mVI2.follow(mVI1);
+    mVI2.setInverted(true);
     
   }
   //public double Move(double speed1, double speed2){
