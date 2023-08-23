@@ -13,7 +13,7 @@ public class CSpark{
   
 
   public CSpark(int device1){
-    mC1 = new CANSparkMax(device1, null);
+    mC1 = new CANSparkMax(device1, MotorType.kBrushless);
     
   }
   //public double Move(double speed1, double speed2){

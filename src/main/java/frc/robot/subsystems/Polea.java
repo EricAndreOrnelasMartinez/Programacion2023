@@ -14,13 +14,14 @@ import frc.robot.Victor;
 import frc.robot.commands.Brazo_ex;
 
 public class Polea extends SubsystemBase {
- private CANSparkMax mC1;
+ private CSpark mC1;
+ private CANSparkMax mC2;
  
 
 
   /** Creates a new ExampleSubsystem. */
   public Polea() {
-  mC1 = CSpark.mC1;
+  mC1 = new CSpark(3);
   
   }
 

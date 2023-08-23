@@ -18,7 +18,7 @@ public class Brazo extends SubsystemBase {
 
   /** Creates a new ExampleSubsystem. */
   public Brazo() {
-  mVex = new Victor(1);
+  mVex = new Victor(4);
   mVrev = new Victor(2);
   }
 

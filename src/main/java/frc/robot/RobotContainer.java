@@ -6,7 +6,11 @@ package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
+import frc.robot.commands.Brazo_ex;
+import frc.robot.commands.Brazo_rev;
+import frc.robot.commands.Down;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.Up;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
@@ -49,7 +53,10 @@ public class RobotContainer {
     new Trigger(m_exampleSubsystem::exampleCondition)
         .onTrue(new ExampleCommand(m_exampleSubsystem));
 
-      
+      control1.leftBumper().whileTrue(new Down(Robot.m_Polea));
+      control1.rightBumper().whileTrue(new Up(Robot.m_Polea));
+      control1.a().whileTrue(new Brazo_ex(Robot.m_Brazo));
+      control1.b().whileTrue(new Brazo_rev(Robot.m_Brazo));
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.

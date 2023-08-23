@@ -34,7 +34,7 @@ public class Intake_out extends CommandBase {
   @Override
   public void execute() {
     double G2=RobotContainer.control1.getRawAxis(3);
-    Robot.m_Intake.Out(G2);
+    Robot.m_Intake.Out(G2*-1);
   }
 
   // Called once the command ends or is interrupted.

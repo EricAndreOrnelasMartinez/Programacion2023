@@ -16,8 +16,8 @@ public class Intake extends SubsystemBase {
   private VictorIntake mVout;
   /** Creates a new ExampleSubsystem. */
   public Intake() {
-    mVin= new VictorIntake(0, 0);
-    mVout= new VictorIntake(0,0);
+    mVin= new VictorIntake(11, 4);
+    //mVout= new VictorIntake(0,0);
   }
 
   /**
@@ -37,11 +37,11 @@ public class Intake extends SubsystemBase {
     mVin.set(ControlMode.PercentOutput, G1);
   }
   public void Out(double G2){
-    mVout.set(ControlMode.PercentOutput, G2);
+    mVin.set(ControlMode.PercentOutput, G2);
   }
   public void Stop(double speed){
     mVin.set(ControlMode.PercentOutput, speed);
-    mVout.set(ControlMode.PercentOutput, speed);
+    //mVout.set(ControlMode.PercentOutput, speed);
   }
 
   /**
