@@ -7,13 +7,15 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.RelativeEncoder;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
-public class Victor{
-  public static VictorSPX mV1;
+public class VictorIntake{
+  public static VictorSPX mVI1;
+  public static VictorSPX mVI2;
   
   
 
-  public Victor(int device1){
-    mV1 = new VictorSPX(device1);
+  public VictorIntake(int device1, int device2){
+    mVI1 = new VictorSPX(device1);
+    mVI2 = new VictorSPX(device2);
     
   }
   //public double Move(double speed1, double speed2){
