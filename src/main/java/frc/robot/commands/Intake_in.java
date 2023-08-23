@@ -4,6 +4,8 @@
 
 package frc.robot.commands;
 
+import frc.robot.Robot;
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Intake;
 import edu.wpi.first.wpilibj2.command.CommandBase;
@@ -31,7 +33,8 @@ public class Intake_in extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    
+    double G1=RobotContainer.control1.getRawAxis(2);
+    Robot.m_Intake.In(G1);
   }
 
   // Called once the command ends or is interrupted.

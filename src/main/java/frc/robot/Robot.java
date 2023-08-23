@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.Chassis_move;
 import frc.robot.subsystems.Brazo;
 import frc.robot.subsystems.Chassis;
+import frc.robot.subsystems.Intake;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -22,6 +23,9 @@ public class Robot extends TimedRobot {
   public static Chassis m_Chassis;
   public static Command m_Chassismove;
   public static Brazo m_Brazo; 
+  public static Intake m_Intake;
+  public static Command m_Intakemovein;
+  public static Command m_Intakemoveout;
 
   private RobotContainer m_robotContainer;
 
@@ -34,6 +38,7 @@ public class Robot extends TimedRobot {
     m_Chassis=new Chassis();
     m_Chassismove= new Chassis_move(m_Chassis);
     m_Brazo = new Brazo();
+    m_Intake=new Intake();
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
@@ -88,6 +93,12 @@ public class Robot extends TimedRobot {
     }
     if(m_Chassismove != null){
       m_Chassismove.schedule();
+    }
+    if(m_Intakemovein != null){
+      m_Intakemovein.schedule();
+    }
+    if(m_Intakemoveout != null){
+      m_Intakemoveout.schedule();
     }
     
   }
