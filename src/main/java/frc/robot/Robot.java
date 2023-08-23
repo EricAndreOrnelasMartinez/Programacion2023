@@ -11,6 +11,7 @@ import frc.robot.commands.Chassis_move;
 import frc.robot.subsystems.Brazo;
 import frc.robot.subsystems.Chassis;
 import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Polea;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -26,6 +27,7 @@ public class Robot extends TimedRobot {
   public static Intake m_Intake;
   public static Command m_Intakemovein;
   public static Command m_Intakemoveout;
+  public static Polea m_Polea;
   //holaa
 
   private RobotContainer m_robotContainer;
@@ -40,6 +42,7 @@ public class Robot extends TimedRobot {
     m_Chassismove= new Chassis_move(m_Chassis);
     m_Brazo = new Brazo();
     m_Intake=new Intake();
+    m_Polea = new Polea();
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
@@ -125,4 +128,7 @@ public class Robot extends TimedRobot {
   /** This function is called periodically whilst in simulation. */
   @Override
   public void simulationPeriodic() {}
+
+  
+  
 }
