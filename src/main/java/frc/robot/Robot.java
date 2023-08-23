@@ -8,6 +8,8 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.Chassis_move;
+import frc.robot.commands.Intake_in;
+import frc.robot.commands.Intake_out;
 import frc.robot.subsystems.Brazo;
 import frc.robot.subsystems.Chassis;
 import frc.robot.subsystems.Intake;
@@ -42,6 +44,8 @@ public class Robot extends TimedRobot {
     m_Chassismove= new Chassis_move(m_Chassis);
     m_Brazo = new Brazo();
     m_Intake=new Intake();
+    m_Intakemovein=new Intake_in(m_Intake);
+    m_Intakemoveout=new Intake_out(m_Intake);
     m_Polea = new Polea();
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
