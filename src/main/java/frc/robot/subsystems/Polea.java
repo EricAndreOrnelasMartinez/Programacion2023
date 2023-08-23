@@ -26,16 +26,15 @@ public class Polea extends SubsystemBase {
   }
 
  public void Up(double speed){
-  mC1.set(0.3);
+  mC1.set(speed);
   
-   
  }
 
  public void Down(double speed){
-  mC1.set(0.3);
+  mC1.set(speed);
  }
  public void stop(double speed){
-  mC1.set(0.0);
+  mC1.set(speed);
 
 
  }

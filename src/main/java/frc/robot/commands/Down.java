@@ -35,7 +35,7 @@ public class Down extends CommandBase {
   @Override
   public void execute() {
     //float x = (float) RobotContainer.control1.getRawAxis(3);
-    Robot.m_Polea.Down(0.3);
+    Robot.m_Polea.Down(-0.3);
 
 
   }
