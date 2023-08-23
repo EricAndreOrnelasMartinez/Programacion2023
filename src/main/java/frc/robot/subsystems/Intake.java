@@ -4,12 +4,20 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Victor;
 
 public class Intake extends SubsystemBase {
+  private Victor mVin;
+  private Victor mVout;
   /** Creates a new ExampleSubsystem. */
-  public Intake() {}
+  public Intake() {
+    mVin= new Victor(0);
+    mVout= new Victor(0);
+  }
 
   /**
    * Example command factory method.
@@ -23,6 +31,16 @@ public class Intake extends SubsystemBase {
         () -> {
           /* one-time action goes here */
         });
+  }
+  public void In(double speed){
+    mVin.set(ControlMode.PercentOutput, speed);
+  }
+  public void Out(double speed){
+    mVout.set(ControlMode.PercentOutput, speed);
+  }
+  public void Stop(double speed){
+    mVin.set(ControlMode.PercentOutput, speed);
+    mVout.set(ControlMode.PercentOutput, speed);
   }
 
   /**
