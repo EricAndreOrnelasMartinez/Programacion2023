@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.Chassis_move;
+import frc.robot.subsystems.Brazo;
 import frc.robot.subsystems.Chassis;
 
 /**
@@ -20,6 +21,7 @@ public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
   public static Chassis m_Chassis;
   public static Command m_Chassismove;
+  public static Brazo m_Brazo; 
 
   private RobotContainer m_robotContainer;
 
@@ -31,6 +33,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     m_Chassis=new Chassis();
     m_Chassismove= new Chassis_move(m_Chassis);
+    m_Brazo = new Brazo();
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();

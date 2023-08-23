@@ -4,16 +4,40 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Victor;
 
-public class ExampleSubsystem extends SubsystemBase {
+public class Brazo extends SubsystemBase {
+ private Victor mVex;
+ private Victor mVrev;
+
+
   /** Creates a new ExampleSubsystem. */
-  public ExampleSubsystem() {}
+  public Brazo() {
+  mVex = new Victor(1);
+  mVrev = new Victor(2);
+  }
+
+ public void extender(double speed){
+ mVex.set(ControlMode.PercentOutput, speed); 
+ }
+
+ public void reversa(double speed){
+mVrev.set(ControlMode.PercentOutput, speed); 
+ }
+ public void stop(double speed){
+  mVex.set(ControlMode.PercentOutput,speed); 
+  mVrev.set(ControlMode.PercentOutput,speed);
+
+
+ }
 
   /**
    * Example command factory method.
-   *
+   
    * @return a command
    */
   public CommandBase exampleMethodCommand() {
