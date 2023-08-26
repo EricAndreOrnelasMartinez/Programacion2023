@@ -20,7 +20,7 @@ public class Chassis extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public Chassis() {
   motorD = new TankModule(6, 7, false); 
-  motorI = new TankModule(10, 5, true); 
+  motorI = new TankModule(1, 5, true); 
 
  
  // m2 = new CANSparkMax(0, null);
@@ -28,6 +28,17 @@ public class Chassis extends SubsystemBase {
 
 
   }
+  public void move(double x, double y){
+    //  double speed1 = TankModule.speed1;
+      double speedI= y+(x*0.8); 
+      double speedD= y-(x*0.8); 
+      if ((x >= -0.1 && x <= 0.1)&&(y >= -0.1 && y <= 0.1)){
+        speedI = 0; 
+        speedD = 0;
+    }
+    motorD.setMD(speedD*0.2);
+    motorI.setMI(speedI*0.2);
+    } 
 
   /**
    * Example command factory method.
@@ -42,17 +53,7 @@ public class Chassis extends SubsystemBase {
           /* one-time action goes here */
         });
   }
-  public void move(double x, double y){
-  //  double speed1 = TankModule.speed1;
-    double speedI= y+(x*0.8); 
-    double speedD= y-(x*0.8); 
-    if ((x >= -0.1 && x <= 0.1)&&(y >= -0.1 && y <= 0.1)){
-      speedI = 0; 
-      speedD = 0;
-  }
-  motorD.setMD(speedD*0.2);
-  motorI.setMI(speedI*0.2);
-  } 
+  
    /**
    * An example method querying a boolean state of the subsystem (for example, a digital sensor).
    *

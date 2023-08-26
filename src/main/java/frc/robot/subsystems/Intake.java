@@ -16,7 +16,7 @@ public class Intake extends SubsystemBase {
   private VictorIntake mVout;
   /** Creates a new ExampleSubsystem. */
   public Intake() {
-    mVin= new VictorIntake(11, 4);
+    mVin= new VictorIntake(7, 4);
     //mVout= new VictorIntake(0,0);
   }
 

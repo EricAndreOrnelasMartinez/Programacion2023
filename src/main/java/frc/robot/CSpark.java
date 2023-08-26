@@ -23,6 +23,7 @@ public class CSpark{
 
 
   public void set(double speed){
+    mC1.set(speed);
     
   }
 

@@ -27,8 +27,10 @@ public class TankModule{
   //  return speed1;
   //}
   public void setMD(double speedD) {
+    m1.set(speedD);
   }
   public void setMI(double speedI) {
+    m1.set(speedI);
   }
 
 }

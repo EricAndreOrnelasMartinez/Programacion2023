@@ -27,6 +27,8 @@ public class VictorIntake{
 
 
   public void set(ControlMode percentoutput, double speed) {
+    mVI1.set(ControlMode.PercentOutput, speed);
+    mVI2.set(ControlMode.PercentOutput, speed);
   }
 
 }
