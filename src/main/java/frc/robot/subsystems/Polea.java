@@ -4,18 +4,12 @@
 
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.revrobotics.CANSparkMax;
-
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.CSpark;
-import frc.robot.Victor;
-import frc.robot.commands.Brazo_ex;
 
 public class Polea extends SubsystemBase {
  private CSpark mC1;
- private CANSparkMax mC2;
  
 
 
@@ -27,16 +21,12 @@ public class Polea extends SubsystemBase {
 
  public void Up(double speed){
   mC1.set(speed);
-  
  }
-
  public void Down(double speed){
   mC1.set(speed);
  }
  public void stop(double speed){
   mC1.set(speed);
-
-
  }
 
   /**

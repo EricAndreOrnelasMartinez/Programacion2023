@@ -8,16 +8,14 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Victor;
 import frc.robot.VictorIntake;
 
 public class Intake extends SubsystemBase {
   private VictorIntake mVin;
-  private VictorIntake mVout;
   /** Creates a new ExampleSubsystem. */
   public Intake() {
     mVin= new VictorIntake(7, 4);
-    //mVout= new VictorIntake(0,0);
+
   }
 
   /**
@@ -41,7 +39,6 @@ public class Intake extends SubsystemBase {
   }
   public void Stop(double speed){
     mVin.set(ControlMode.PercentOutput, speed);
-    //mVout.set(ControlMode.PercentOutput, speed);
   }
 
   /**

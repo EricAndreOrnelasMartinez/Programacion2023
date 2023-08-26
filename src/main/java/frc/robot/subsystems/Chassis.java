@@ -3,8 +3,6 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.subsystems;
-
-import com.revrobotics.CANSparkMax;
 import com.revrobotics.RelativeEncoder;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
@@ -19,8 +17,8 @@ public class Chassis extends SubsystemBase {
 
   /** Creates a new ExampleSubsystem. */
   public Chassis() {
-  motorD = new TankModule(6, 7, false); 
-  motorI = new TankModule(1, 5, true); 
+  motorD = new TankModule(6, 7, true); 
+  motorI = new TankModule(1, 5, false); 
 
  
  // m2 = new CANSparkMax(0, null);
@@ -29,7 +27,7 @@ public class Chassis extends SubsystemBase {
 
   }
   public void move(double x, double y){
-    //  double speed1 = TankModule.speed1;
+    
       double speedI= y+(x*0.8); 
       double speedD= y-(x*0.8); 
       if ((x >= -0.1 && x <= 0.1)&&(y >= -0.1 && y <= 0.1)){
